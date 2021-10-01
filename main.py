@@ -1,6 +1,7 @@
 #Simple to do app
 from fastapi import FastAPI
 from pydantic import BaseModel
+import uvicorn 
 
 app = FastAPI()
 
@@ -54,3 +55,8 @@ def update_item(id:int, name:str):
         if(item.id == id):
             item.name=name
             break
+
+
+if __name__ == '__main__':
+    uvicorn.run('main:app', host="127.0.0.1", port=5000, log_level="info")
+    
