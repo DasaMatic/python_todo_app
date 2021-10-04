@@ -26,6 +26,7 @@ def create_item(item: Item):
 def get_all_items():
     return to_do_items
 
+
 #delete item
 @app.delete("/deleteItem/{id}")
 def delete_item(id:int):
@@ -47,7 +48,6 @@ def mark_as_done_or_undone(id:int):
                  item.status = False
                  break
             
-        
     
 #update name of item
 @app.put("/updateItem/{id}/")
